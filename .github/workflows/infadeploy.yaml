@@ -16,11 +16,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ env.AWS_REGION }}  
       - name: Deploy CloudFormation Stack
-        uses: aws-actions/aws-cloudformation-deploy@v1
+        uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
           stack-name: test-stack
           template-file: cft.yaml
           region: ap-south-1
-          parameter-overrides: |
+          parameter-overrides: >-
             KeyName=k8skey
             AmiId=ami-07d3a50bd29811cd1
