@@ -21,7 +21,6 @@ jobs:
         with:
           name: my-ec2-stack
           template: ./cloudformation/template.yaml
-          parameter-overrides: KeyName=my-ec2-key-pair
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
